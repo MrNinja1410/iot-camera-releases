@@ -25,7 +25,7 @@ APP_VERSION = os.environ.get("EDUCAM_APP_VERSION", "1.29.0")
 #     If you regenerate keys with sign_release.py --genkeys, paste the new one.)
 UPDATE_PUBLIC_KEY = os.environ.get(
     "EDUCAM_UPDATE_PUBKEY",
-    "/4d/5IAkBo2Jq83204KzF3SHjnBlmGZg+V0EYfqyYx4=",
+    "Ca6n8bjV0pgTnGsVsNCtyJXIEedkzgzu1LEjNbqEzJw=",
 )
 
 # Network timeouts (seconds). HTTP_TIMEOUT is generous because a free host
