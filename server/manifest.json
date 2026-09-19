@@ -1,8 +1,0 @@
-{
-  "version": "1.29.0",
-  "url": "https://github.com/MrNinja1410/iot-camera-releases/releases/download/v1.29.0/IoTCameraAnalyzer-1.29.0.exe",
-  "sha256": "a26acdc4af8dc36e9a2c3c820d9a1357a3f17f66ddd45239d5e54727e350d916",
-  "size": 247545856,
-  "notes": "IP Geolocation feature with interactive map - right-click IP to geolocate",
-  "signature": "dSdIEJy0J956NmNFFfFdYv+Z1qd6H9CBQ8uSubL1ngFWq/tWdRbLFCr66Six1HiQEvEYgfAO2ih2kqfEDsxzCw=="
-}
