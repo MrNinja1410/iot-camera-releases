@@ -243,17 +243,54 @@ New releases haven't built up publisher reputation yet. Choose **More info → R
 
 <!-- EDIT: replace these with your real release notes. Keep newest at the top. -->
 
-### v2.4.1 — _latest_
-- _Add your changes here (one bullet per change)._
-
-### v2.3.0
-- _Add your changes here._
-
-### v2.2.0
-- _Add your changes here._
-
-### v2.0.0
-- _Add your changes here._
+Release notes
+Download IoT Camera Analyzer:
+https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1....
+v1.31.0:
+Testing: Update mechanism validation - no user-facing changes.
+v1.29.0:
+New: IP Geolocation feature - right-click any IP in results table and select 'Geolocate' to see location details (country, city, coordinates, ISP, timezone) with an interactive Leaflet map pinned to the exact location. Copy details to clipboard.
+v1.28.0:
+Fixed: the FTP/Telnet/SMB/RDP/MQTT/RTSP toolbar buttons stayed frozen on their creation-time look after a theme switch - they copied SSH's button style once at startup but weren't in the list re-themed on every switch, unlike SSH itself. All now switch cleanly between the dark and default themes.
+New: RDP Brute Force (real NLA) - genuine credential guessing for RDP, using the same Windows RDP client engine as 'Test Login (real NLA)' for every attempt. Unlike this app's other brute-force tools, attempts run one at a time rather than in parallel threads, since the ActiveX control has to stay on the GUI thread - slower, but each attempt is a real CredSSP/NTLM verdict, not a guess.
+Fixed a real bug found while building it: Qt's default 'quit on last window closed' meant closing the RDP test widget between brute-force attempts could tear down the whole app the moment it was the only visible window - now suspended for exactly that widget's lifetime and restored after.
+v1.27.0:
+New: RTSP toolkit - Test Login, Batch RTSP Scan, and RTSP Brute Force, plus a right-click 'RTSP Test Login' action on any result. RTSP is the actual streaming protocol behind this app's camera targets, so this is directly on-theme - a raw DESCRIBE request with real Basic/Digest auth (MD5 via the standard library, no hand-rolled cipher), same genuine login test as FTP/Telnet/SMB/MQTT. A found login is also registered with PSS Mode's session store, so switching that device to View > PSS Mode picks the credentials up automatically.
+New (experimental): 'Test Login (real NLA)' in RDP Quick Connect - an actual RDP login test via Windows' own RDP client engine (mstscax.dll, the same one mstsc.exe uses), hosted through PyQt6's QAxWidget. Real CredSSP/NTLM authentication, not a guess - this is the piece Batch RDP Scan still can't do on its own. Marked experimental because this dev environment has no real Windows Pro/Server RDP host to verify the success case against - the rejection case is verified (a non-RDP service and a genuinely unreachable host both correctly report failure, matching the real control's own ~16s internal timeout, with no crash either way).
+v1.26.0:
+New: MQTT toolkit - Test Login, Batch MQTT Scan, and MQTT Brute Force, plus a right-click 'MQTT Test Login' action on any result. MQTT's CONNACK reason code gives a real accept/reject verdict straight from the broker, the same genuine login test FTP/Telnet/SMB use - no crypto handshake to work around like RDP's NLA. Anonymous access (no username/password at all) is checked first, since it's the single most common finding on exposed brokers.
+Multi IoT Mode gained an 'MQTT (anonymous access)' Exposed Services entry - genuinely on-theme for an IoT scanner, since MQTT is the actual messaging bus behind smart-home hubs and sensor networks, not just a legacy protocol that happens to land on IoT gear.
+Renamed the 'FTP/SSH' tab to 'Protocol' and widened its open-port check to cover SMB, RDP, and MQTT alongside FTP/SSH - the Found column now spells out every protocol confirmed open on a host, not just the original two. Added live SMB/RDP/MQTT counters next to the existing FTP/SSH ones in the summary bar.
+v1.25.0:
+New: RDP toolkit - RDP Connect and Batch RDP Scan, plus a right-click 'RDP to' action on any result. Connect launches Windows' own mstsc.exe, caching credentials via 'cmdkey' first (then cleaning them back up once the session closes) so it connects without an extra prompt.
+No RDP Brute Force this round: real RDP authentication happens inside CredSSP/NLA, a full NTLM/Kerberos-over-TLS handshake, and the one pure-Python library with that support needs a Rust toolchain to build with no prebuilt wheel available - there's no lightweight way to actually test a login the way FTP/Telnet/SMB could.
+Batch RDP Scan does real, verifiable recon instead: a genuine X.224/RDP Negotiation handshake against each host reporting whether NLA is actually enforced - turning the existing BlueKeep advisory into a concrete per-host fact rather than a generic warning.
+v1.24.0:
+New: full SMB toolkit, mirroring FTP/Telnet - SMB Connect, Batch SMB Scan, and SMB Brute Force, plus a right-click 'SMB to' action on any result. Built on pysmb since SMB's NTLM handshake needs a real client library, unlike FTP/Telnet's raw-socket approach.
+A found login also lists the server's shares, and Multi IoT Mode gained an 'SMB (guest/null session)' Exposed Services entry that flags servers with guest access or null sessions left enabled - the SMB equivalent of FTP's anonymous-login check.
+'Open External' authenticates the session via Windows' own 'net use' then hands off to Explorer's native UNC-path browsing - no 3rd-party SMB client needed, unlike FTP's FileZilla integration.
+v1.23.0:
+New: full Telnet toolkit, mirroring FTP/SSH - Telnet Connect, Batch Telnet Scan, and Telnet Brute Force, plus a right-click 'Telnet to' action on any result. Built without telnetlib (removed from Python 3.13+) via a small raw-socket client.
+Telnet's credential cycle uses the same admin-first nested sweep as FTP, with real Mirai-botnet default passwords (xc3511, vizxv, 888888, etc.) since that's genuinely what's found on exposed telnet - this is the exact credential set the original Mirai malware used to compromise IoT devices at internet scale.
+Found Telnet credentials also show the host's reverse-DNS hostname and the login banner, and are saved to Results/telnet_batch_scan_logins.txt as they're found.
+v1.22.0:
+New: Batch FTP Scan is smarter now: usernames and passwords are separate lists cycled as a proper nested sweep - admin:admin first, then every other password against admin, then the next username and the full password cycle again - instead of a flat list of pre-paired guesses.
+Anonymous logins are now a separate 'Include Anonymous Logins' toggle in the FTP menu (off by default) instead of always being mixed into the credential cycle, so genuine cracked-credential hits aren't diluted by trivially-open anonymous servers.
+Found FTP credentials now also show the server's hostname (reverse DNS) and/or its welcome banner, which often embeds the real hostname even when there's no PTR record.
+Batch FTP Scan hits are now saved to Results/ftp_batch_scan_logins.txt as they're found, matching FTP Brute Force's own results file.
+v1.21.0:
+Renamed 'Port 22 Open' to 'FTP/SSH' - it now checks tcp/21 (FTP) alongside tcp/22 (SSH) on every Good result, with a new 'Found' column showing exactly which protocol(s) were confirmed open on each host.
+New: live FTP and SSH counters in the status bar next to Good/Bad, so you can see at a glance how many of each are open during a scan.
+New: the Batch FTP Scan's credential list is now its own curated FTP-specific set (anonymous variants, common FTP/device defaults) instead of being reused from the SSH/camera-brand list.
+v1.20.0:
+Fixed: Multi IoT scans of FTP, MongoDB, Redis, RDP and VNC never showed any Good results - these aren't HTTP services, so the old HTTP-based check just errored out on every match. Each now gets a real protocol-aware check (FTP: anonymous login; the rest: the same no-auth checks the vulnerability scanner already used).
+FTP's 'Open External' now launches FileZilla if it's installed, instead of just handing off to Windows Explorer's read-only ftp:// view.
+New: FTP Quick Connect shows a read-only directory listing after a successful login, so you can see what's exposed without leaving the dialog.
+New: a List Files button on every Batch FTP Scan hit, same directory-listing preview without re-entering credentials.
+v1.19.0:
+New: full FTP toolkit, mirroring the SSH tools - FTP Connect (login test + hand off to Windows Explorer's ftp:// support), Batch FTP Scan (live results across your Good tab), and FTP Brute Force (dictionary attack against a single host). Also on any result's right-click menu.
+Multi IoT Mode: added FTP (anonymous login) to Exposed Services, with a Shodan query verified against live results.
+New: right-click a country in the 9-5 Time Zones tab to set it as the Country in Quick Search.
 
 See the [Releases page](https://github.com/MrNinja1410/iot-camera-releases/releases) for full notes and downloads.
 
