@@ -136,6 +136,18 @@ It's built for **home-lab users, network engineers, and security teams** who wan
 ### Motion detection zones
 <img src="docs/screenshots/motion-zones.png" alt="Camera feed with drawn motion-detection zones and sensitivity sliders" width="850" />
 
+### Geolocation & Password reset
+<img src="https://imgup.uk/i/XdfAK7ah.png" alt="Analytics dashboard charting motion events and device uptime" width="850" />
+
+### Live multi-camera view
+<img src="docs/screenshots/multi-feed.png" alt="Grid of live camera feeds with per-camera status" width="850" />
+
+### Network discovery
+<img src="docs/screenshots/network-scan.png" alt="Network scan results listing discovered cameras with brand, model and firmware" width="850" />
+
+### Motion detection zones
+<img src="docs/screenshots/motion-zones.png" alt="Camera feed with drawn motion-detection zones and sensitivity sliders" width="850" />
+
 ### Analytics
 <img src="docs/screenshots/analytics.png" alt="Analytics dashboard charting motion events and device uptime" width="850" />
 
