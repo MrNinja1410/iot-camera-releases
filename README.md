@@ -10,8 +10,8 @@
   Until you add them, GitHub shows the alt-text in a grey box,
   so nothing looks broken.
   Anything marked  <!-- EDIT --> 
-  ═════════════════════════════════════════════════════════════════════════════════════════
-
+  ═════════════════════════════════════════════════════════════════════════
+  
 
 <div align="center">
 
