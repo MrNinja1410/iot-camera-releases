@@ -38,7 +38,7 @@ Real-time feeds · motion detection · smart alerts · automatic signed updates.
 
 <!-- Replace docs/screenshots/dashboard.png with a screenshot of the main app window -->
 <div align="center">
-  <img src="docs/screenshots/dashboard.png" alt="IoT Camera Analyzer main dashboard showing multiple live camera feeds" width="850" />
+  <img src="https://imgup.uk/i/j05c5wzf.png" alt="IoT Camera Analyzer main dashboard showing multiple live camera feeds" width="850" />
 </div>
 
 <br />
