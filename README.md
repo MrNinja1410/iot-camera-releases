@@ -9,7 +9,7 @@
      (dashboard.png, multi-feed.png, etc.) — or change the paths.
   Until you add them, GitHub shows the alt-text in a grey box,
   so nothing looks broken.
-  Anything marked  <!-- EDIT -->  is a placeholder value you
+  Anything marked  <!-- EDIT --> 
   ═══════════════════════════════════════════════════════════════
 -->
 
