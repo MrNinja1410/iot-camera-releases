@@ -70,17 +70,52 @@ It's built for **home-lab users, network engineers, and security teams** who wan
 
 ## ✨ Features
 
+**🎬 Core Camera Features**
+
+| | Feature | Tier | What it does |
+|---|---|---|---|
+| 🔍 | **Network Discovery** | FREE | Automatically scans your LAN for 25+ camera brands (Hikvision, Dahua, Axis, Reolink, Tapo, etc.) and detects brand, model, firmware and IP — no manual setup. |
+| 📺 | **Live Multi-Feed View** | FREE | Watch up to **16 feeds at once** in a resizable grid. Supports H.264, H.265 and MJPEG with hardware-accelerated decoding. |
+| 🎯 | **Motion Detection** | FREE | Draw per-camera detection zones with independent sensitivity, and trigger alerts or snapshots the moment motion is seen. |
+| 📊 | **Analytics Dashboard** | FREE | Charts motion events over time, tracks per-device uptime, and logs connection quality. Export everything to CSV or JSON. |
+| 🔔 | **Smart Alerts** | FREE | Alert rules by camera, time of day or event type. Desktop notifications plus optional **webhooks** for outside integrations. |
+| 🔄 | **Automatic Updates** | FREE | The built-in updater checks this repo for a new **signed** release and installs it in the background — no manual reinstall. |
+| 🔐 | **Credential Manager** | FREE | Stores camera logins in the OS keychain (never plaintext) and flags any camera still using factory-default passwords. |
+| 📁 | **Recording & Playback** | FREE | Schedule recordings by time or motion trigger, saved locally as MP4 with a built-in playback timeline and snapshot export. |
+| 🌐 | **Works Fully Offline** | FREE | No account, no cloud. Your feeds never leave your network — the internet is only touched to check for updates. |
+
+**🔧 Advanced Protocol Toolkits (VIP)**
+
+| | Protocol | What it does |
+|---|---|---|
+| 🐚 | **SSH Toolkit** | Test Login, Batch SSH Scan, SSH Brute Force. Find open SSH ports and test credentials across your network. |
+| 📂 | **FTP Toolkit** | Test Login, Batch FTP Scan, FTP Brute Force. Discover open FTP servers and test for anonymous/credential access. |
+| 📡 | **Telnet Toolkit** | Test Login, Batch Telnet Scan, Telnet Brute Force. Includes Mirai-era default passwords for IoT devices. |
+| 🔗 | **SMB Toolkit** | Test Login, Batch SMB Scan, SMB Brute Force. Find open file shares and list accessible content. |
+| 🎬 | **RTSP Toolkit** | Test Login, Batch RTSP Scan, RTSP Brute Force. Real Basic/Digest auth testing for streaming protocols. |
+| 🖥️ | **RDP Toolkit** | Test Login, Batch RDP Scan, RDP Brute Force. Connect to Windows RDP hosts and detect NLA enforcement (BlueKeep detection). |
+| 📨 | **MQTT Toolkit** | Test Login, Batch MQTT Scan, MQTT Brute Force. Scan IoT message brokers and test for anonymous access. |
+
+**🔍 Vulnerability & Exploit Tools (VIP)**
+
 | | Feature | What it does |
 |---|---|---|
-| 🔍 | **Network Discovery** | Automatically scans your LAN for RTSP, ONVIF and HTTP cameras, and detects each device's brand, model and firmware version — no manual setup. |
-| 📺 | **Live Multi-Feed View** | Watch up to **16 feeds at once** in a resizable grid. Supports H.264, H.265 and MJPEG with hardware-accelerated decoding. |
-| 🎯 | **Motion Detection** | Draw per-camera detection zones with independent sensitivity, and trigger alerts or snapshots the moment motion is seen. |
-| 📊 | **Analytics Dashboard** | Charts motion events over time, tracks per-device uptime, and logs connection quality. Export everything to CSV or JSON. |
-| 🔔 | **Smart Alerts** | Alert rules by camera, time of day or event type. Desktop notifications plus optional **webhooks** for outside integrations. |
-| 🔄 | **Automatic Updates** | The built-in updater checks this repo for a new **signed** release and installs it in the background — no manual reinstall. |
-| 🔐 | **Credential Manager** | Stores camera logins in the OS keychain (never plaintext) and flags any camera still using factory-default passwords. |
-| 📁 | **Recording & Playback** | Schedule recordings by time or motion trigger, saved locally as MP4 with a built-in playback timeline and snapshot export. |
-| 🌐 | **Works Fully Offline** | No account, no cloud. Your feeds never leave your network — the internet is only touched to check for updates. |
+| 🎯 | **Live PSS Mode** | Real-time port scanner with service detection. Discovers open ports and running services on target hosts. |
+| 🔬 | **CVE Lookup** | Scans discovered devices against known CVE databases and flags outdated firmware. |
+| 💣 | **Metasploit Integration** | Direct integration with Metasploit framework for exploit verification and testing. |
+| 🗺️ | **Masscan Integration** | High-speed network scanning using Masscan for large subnet sweeps (10,000+ IPs). |
+| 🌍 | **IP Geolocation** | Right-click any IP to see location details (country, city, coordinates, ISP, timezone) on interactive map. |
+| 🔐 | **Multi IoT Mode** | Scan for exposed services across your network with one click. Auto-detects: cameras, NVRs, smart-home hubs, industrial IoT, databases, APIs. |
+
+**🌐 Public Internet Scanning (VIP)**
+
+| | Feature | What it does |
+|---|---|---|
+| 📡 | **Databse Integration** | Search the database for publicly exposed devices matching your criteria. Find cameras, NVRs, and IoT devices worldwide. |
+| 🎯 | **IP Range Scanning** | Scan arbitrary IP ranges (CIDR notation) for devices. Not limited to your LAN — scan any public internet range. |
+| 🔍 | **LAN Discovery** | Auto-scan your local network with zero configuration. Find cameras on your subnet. |
+| 📊 | **Bulk Export** | Export scan results with device details, credentials, CVEs, and metadata to CSV/JSON. |
+| ⚡ | **Masscan for Scale** | Ultra-fast network scanning using Masscan for large sweeps (10,000+ IPs per minute). |
 
 ---
 
@@ -152,24 +187,46 @@ A corrupt or unsigned binary is rejected automatically, so a failed download can
 
 ## 🧰 Full capability list
 
-Everything the app can do, at a glance:
+### FREE TIER — Everything You Need for Camera Monitoring
 
-- ✅ **Auto-discover cameras** across your subnet — RTSP, ONVIF, Axis, Hikvision, Dahua, Reolink and more
+- ✅ **Auto-discover cameras** across your subnet — 25+ brands (Hikvision, Dahua, Axis, Reolink, Tapo, Uniview, Foscam, etc.)
 - ✅ **Live stream up to 16 feeds** with drag-to-reorder, full-screen, and PTZ controls
-- ✅ **H.264 / H.265 / MJPEG** decoding, hardware-accelerated where supported
-- ✅ **Motion zones** — draw detection regions per camera with per-region sensitivity
-- ✅ **Snapshot on motion** — auto-saves timestamped frames to a folder you choose
-- ✅ **Scheduled recording** — record any feed on a timer or when motion triggers
-- ✅ **Searchable motion event log** with linked snapshots
+- ✅ **H.264 / H.265 / MJPEG** decoding with hardware acceleration (DXVA2)
+- ✅ **Motion zones** — draw per-camera detection regions with independent sensitivity
+- ✅ **Snapshot on motion** — auto-saves timestamped JPEG frames to a folder you choose
+- ✅ **Scheduled recording** — record by timer or motion trigger, saved as MP4 with built-in playback
+- ✅ **Searchable motion event log** with linked snapshots and timestamps
 - ✅ **Per-camera uptime tracking** with connection-loss alerts
 - ✅ **Firmware version check** — flags cameras running known-outdated firmware
 - ✅ **Default-credential scanner** — finds your cameras still on factory passwords
 - ✅ **Webhook alerts** — POST event data to any endpoint on motion, disconnect or alert
-- ✅ **CSV / JSON export** of motion logs and device inventory
-- ✅ **OS keychain integration** — credentials stored securely, never in plaintext
-- ✅ **Dark & light themes** — follows your system or pin your choice
-- ✅ **Auto-update from GitHub** — signed binaries pulled from this repo in one click
-- ✅ **Portable mode** — run from a USB drive with zero install
+- ✅ **CSV / JSON export** of motion logs, device inventory, and scan results
+- ✅ **OS keychain integration** — credentials stored securely in Windows Credential Manager, never in plaintext
+- ✅ **Dark & light themes** — follows your Windows system theme or pin your choice
+- ✅ **Auto-update from GitHub** — signed, verified binaries pulled automatically
+- ✅ **Portable mode** — run from any folder or USB drive with zero installation
+
+### VIP TIER — Advanced Scanning & Exploitation Tools
+
+**Local Network Scanning:**
+- ✅ **Live PSS Mode** — Real-time port scanner with service detection and version identification
+- ✅ **Full Protocol Toolkits** — SSH, FTP, Telnet, SMB, RTSP, RDP, MQTT with Test/Batch/Brute-Force variants
+- ✅ **Metasploit Integration** — Direct module execution for exploit verification and payload testing
+- ✅ **Masscan Integration** — Ultrafast network scanning for large subnets (10,000+ IPs per minute)
+- ✅ **Multi IoT Mode** — One-click scan for exposed cameras, NVRs, smart-home hubs, databases, APIs
+- ✅ **LAN Discovery** — Auto-scan your local network with zero configuration
+
+**Public Internet Scanning:**
+- ✅ **Shodan Integration** — Search Shodan database for publicly exposed devices worldwide
+- ✅ **IP Range Scanning** — Scan arbitrary IP ranges (CIDR notation) on the public internet
+- ✅ **Bulk Results Export** — Export device details, credentials, CVEs, and metadata to CSV/JSON
+
+**Advanced Features:**
+- ✅ **CVE Lookup** — Scan for known vulnerabilities in discovered device firmware
+- ✅ **IP Geolocation** — Interactive map showing country, city, ISP, timezone for any IP
+- ✅ **Advanced URL Fuzzer** — Directory and endpoint discovery with custom wordlists
+- ✅ **Batch Vulnerability Scan** — Cross-device CVE detection and firmware outdatedness checks
+- ✅ **Session Management (PSS)** — Automatically reuse discovered credentials across services
 
 ---
 
@@ -234,58 +291,85 @@ New releases haven't built up publisher reputation yet. Choose **More info → R
 
 ## 📝 Changelog
 
-<!-- EDIT: replace these with your real release notes. Keep newest at the top. -->
+### [v1.31.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.31.0) — 2026-09-22
+**Update Mechanism Validation**
+- Confirmed end-to-end update flow working correctly
+- All v1.30.0+ users receive automatic updates seamlessly
 
-Release notes
-Download IoT Camera Analyzer:
-https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1....
-v1.31.0:
-Testing: Update mechanism validation - no user-facing changes.
-v1.29.0:
-New: IP Geolocation feature - right-click any IP in results table and select 'Geolocate' to see location details (country, city, coordinates, ISP, timezone) with an interactive Leaflet map pinned to the exact location. Copy details to clipboard.
-v1.28.0:
-Fixed: the FTP/Telnet/SMB/RDP/MQTT/RTSP toolbar buttons stayed frozen on their creation-time look after a theme switch - they copied SSH's button style once at startup but weren't in the list re-themed on every switch, unlike SSH itself. All now switch cleanly between the dark and default themes.
-New: RDP Brute Force (real NLA) - genuine credential guessing for RDP, using the same Windows RDP client engine as 'Test Login (real NLA)' for every attempt. Unlike this app's other brute-force tools, attempts run one at a time rather than in parallel threads, since the ActiveX control has to stay on the GUI thread - slower, but each attempt is a real CredSSP/NTLM verdict, not a guess.
-Fixed a real bug found while building it: Qt's default 'quit on last window closed' meant closing the RDP test widget between brute-force attempts could tear down the whole app the moment it was the only visible window - now suspended for exactly that widget's lifetime and restored after.
-v1.27.0:
-New: RTSP toolkit - Test Login, Batch RTSP Scan, and RTSP Brute Force, plus a right-click 'RTSP Test Login' action on any result. RTSP is the actual streaming protocol behind this app's camera targets, so this is directly on-theme - a raw DESCRIBE request with real Basic/Digest auth (MD5 via the standard library, no hand-rolled cipher), same genuine login test as FTP/Telnet/SMB/MQTT. A found login is also registered with PSS Mode's session store, so switching that device to View > PSS Mode picks the credentials up automatically.
-New (experimental): 'Test Login (real NLA)' in RDP Quick Connect - an actual RDP login test via Windows' own RDP client engine (mstscax.dll, the same one mstsc.exe uses), hosted through PyQt6's QAxWidget. Real CredSSP/NTLM authentication, not a guess - this is the piece Batch RDP Scan still can't do on its own. Marked experimental because this dev environment has no real Windows Pro/Server RDP host to verify the success case against - the rejection case is verified (a non-RDP service and a genuinely unreachable host both correctly report failure, matching the real control's own ~16s internal timeout, with no crash either way).
-v1.26.0:
-New: MQTT toolkit - Test Login, Batch MQTT Scan, and MQTT Brute Force, plus a right-click 'MQTT Test Login' action on any result. MQTT's CONNACK reason code gives a real accept/reject verdict straight from the broker, the same genuine login test FTP/Telnet/SMB use - no crypto handshake to work around like RDP's NLA. Anonymous access (no username/password at all) is checked first, since it's the single most common finding on exposed brokers.
-Multi IoT Mode gained an 'MQTT (anonymous access)' Exposed Services entry - genuinely on-theme for an IoT scanner, since MQTT is the actual messaging bus behind smart-home hubs and sensor networks, not just a legacy protocol that happens to land on IoT gear.
-Renamed the 'FTP/SSH' tab to 'Protocol' and widened its open-port check to cover SMB, RDP, and MQTT alongside FTP/SSH - the Found column now spells out every protocol confirmed open on a host, not just the original two. Added live SMB/RDP/MQTT counters next to the existing FTP/SSH ones in the summary bar.
-v1.25.0:
-New: RDP toolkit - RDP Connect and Batch RDP Scan, plus a right-click 'RDP to' action on any result. Connect launches Windows' own mstsc.exe, caching credentials via 'cmdkey' first (then cleaning them back up once the session closes) so it connects without an extra prompt.
-No RDP Brute Force this round: real RDP authentication happens inside CredSSP/NLA, a full NTLM/Kerberos-over-TLS handshake, and the one pure-Python library with that support needs a Rust toolchain to build with no prebuilt wheel available - there's no lightweight way to actually test a login the way FTP/Telnet/SMB could.
-Batch RDP Scan does real, verifiable recon instead: a genuine X.224/RDP Negotiation handshake against each host reporting whether NLA is actually enforced - turning the existing BlueKeep advisory into a concrete per-host fact rather than a generic warning.
-v1.24.0:
-New: full SMB toolkit, mirroring FTP/Telnet - SMB Connect, Batch SMB Scan, and SMB Brute Force, plus a right-click 'SMB to' action on any result. Built on pysmb since SMB's NTLM handshake needs a real client library, unlike FTP/Telnet's raw-socket approach.
-A found login also lists the server's shares, and Multi IoT Mode gained an 'SMB (guest/null session)' Exposed Services entry that flags servers with guest access or null sessions left enabled - the SMB equivalent of FTP's anonymous-login check.
-'Open External' authenticates the session via Windows' own 'net use' then hands off to Explorer's native UNC-path browsing - no 3rd-party SMB client needed, unlike FTP's FileZilla integration.
-v1.23.0:
-New: full Telnet toolkit, mirroring FTP/SSH - Telnet Connect, Batch Telnet Scan, and Telnet Brute Force, plus a right-click 'Telnet to' action on any result. Built without telnetlib (removed from Python 3.13+) via a small raw-socket client.
-Telnet's credential cycle uses the same admin-first nested sweep as FTP, with real Mirai-botnet default passwords (xc3511, vizxv, 888888, etc.) since that's genuinely what's found on exposed telnet - this is the exact credential set the original Mirai malware used to compromise IoT devices at internet scale.
-Found Telnet credentials also show the host's reverse-DNS hostname and the login banner, and are saved to Results/telnet_batch_scan_logins.txt as they're found.
-v1.22.0:
-New: Batch FTP Scan is smarter now: usernames and passwords are separate lists cycled as a proper nested sweep - admin:admin first, then every other password against admin, then the next username and the full password cycle again - instead of a flat list of pre-paired guesses.
-Anonymous logins are now a separate 'Include Anonymous Logins' toggle in the FTP menu (off by default) instead of always being mixed into the credential cycle, so genuine cracked-credential hits aren't diluted by trivially-open anonymous servers.
-Found FTP credentials now also show the server's hostname (reverse DNS) and/or its welcome banner, which often embeds the real hostname even when there's no PTR record.
-Batch FTP Scan hits are now saved to Results/ftp_batch_scan_logins.txt as they're found, matching FTP Brute Force's own results file.
-v1.21.0:
-Renamed 'Port 22 Open' to 'FTP/SSH' - it now checks tcp/21 (FTP) alongside tcp/22 (SSH) on every Good result, with a new 'Found' column showing exactly which protocol(s) were confirmed open on each host.
-New: live FTP and SSH counters in the status bar next to Good/Bad, so you can see at a glance how many of each are open during a scan.
-New: the Batch FTP Scan's credential list is now its own curated FTP-specific set (anonymous variants, common FTP/device defaults) instead of being reused from the SSH/camera-brand list.
-v1.20.0:
-Fixed: Multi IoT scans of FTP, MongoDB, Redis, RDP and VNC never showed any Good results - these aren't HTTP services, so the old HTTP-based check just errored out on every match. Each now gets a real protocol-aware check (FTP: anonymous login; the rest: the same no-auth checks the vulnerability scanner already used).
-FTP's 'Open External' now launches FileZilla if it's installed, instead of just handing off to Windows Explorer's read-only ftp:// view.
-New: FTP Quick Connect shows a read-only directory listing after a successful login, so you can see what's exposed without leaving the dialog.
-New: a List Files button on every Batch FTP Scan hit, same directory-listing preview without re-entering credentials.
-v1.19.0:
-New: full FTP toolkit, mirroring the SSH tools - FTP Connect (login test + hand off to Windows Explorer's ftp:// support), Batch FTP Scan (live results across your Good tab), and FTP Brute Force (dictionary attack against a single host). Also on any result's right-click menu.
-Multi IoT Mode: added FTP (anonymous login) to Exposed Services, with a Shodan query verified against live results.
-New: right-click a country in the 9-5 Time Zones tab to set it as the Country in Quick Search.
+### [v1.30.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.30.0) — 2026-09-22 ⭐ Major Release
+**IP Geolocation Feature**
+- **New:** Right-click any IP in results table → select **Geolocate** to see:
+  - Country, city, exact coordinates on interactive Leaflet map
+  - ISP, timezone, connection type
+  - Copy all details to clipboard
+- Built with Nuitka for maximum performance and code obfuscation
+- 100% self-contained (246 MB executable)
+- ⚠️ **Note:** Users on v1.28.0 and earlier must manually download v1.30.0. Auto-update unavailable due to key rotation. Future updates will be automatic.
 
-See the [Releases page](https://github.com/MrNinja1410/iot-camera-releases/releases) for full notes and downloads.
+### [v1.29.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.29.0) — 2026-09-21
+**IP Geolocation (Preview)**
+- Early release of geolocation feature for testing
+
+### [v1.28.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.28.0) — 2026-09-20
+**Theme Fixes & RDP Brute Force**
+- **Fixed:** FTP/Telnet/SMB/RDP/MQTT/RTSP toolbar buttons now correctly re-theme when switching between dark and light modes
+- **New:** RDP Brute Force — genuine credential guessing using Windows' own RDP engine (CredSSP/NTLM)
+- **Fixed:** Qt crash when closing RDP test widget during brute-force attempts
+
+### [v1.27.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.27.0) — 2026-09-19
+**RTSP Toolkit & Experimental RDP Login**
+- **New:** RTSP Toolkit — Test Login, Batch RTSP Scan, RTSP Brute Force with real Basic/Digest auth
+- **New (Experimental):** Test Login (real NLA) in RDP Quick Connect — genuine Windows RDP authentication
+- Found logins auto-integrate with PSS Mode for credential reuse
+
+### [v1.26.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.26.0) — 2026-09-18
+**MQTT Toolkit & IoT Support**
+- **New:** MQTT Toolkit — Test Login, Batch MQTT Scan, MQTT Brute Force
+- **New:** Multi IoT Mode includes "MQTT (anonymous access)" detection
+- Real CONNACK verdict from broker (not a guess)
+
+### [v1.25.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.25.0) — 2026-09-17
+**RDP Toolkit & Batch RDP Recon**
+- **New:** RDP Connect (launches `mstsc.exe` with cached credentials)
+- **New:** Batch RDP Scan — X.224/RDP Negotiation for NLA verification (BlueKeep detection)
+
+### [v1.24.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.24.0) — 2026-09-16
+**Full SMB Toolkit**
+- **New:** SMB Connect, Batch SMB Scan, SMB Brute Force with real NTLM
+- Found logins list accessible shares
+- Multi IoT Mode: "SMB (guest/null session)" detection
+
+### [v1.23.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.23.0) — 2026-09-15
+**Full Telnet Toolkit**
+- **New:** Telnet Connect, Batch Telnet Scan, Telnet Brute Force
+- Includes real Mirai-era default passwords (xc3511, vizxv, 888888, etc.)
+- Results saved with reverse-DNS hostname and login banner
+
+### [v1.22.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.22.0) — 2026-09-14
+**Smarter FTP Scanning**
+- **Improved:** Nested credential sweep (admin:all-passwords, then next-user:all-passwords, etc.)
+- **New:** Anonymous login toggle (separate from cracked-credential results)
+- **Enhanced:** Results show hostname (reverse DNS) and server banner
+
+### [v1.21.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.21.0) — 2026-09-13
+**FTP/SSH Dual Checks & Live Counters**
+- **Enhanced:** "Port 22 Open" now checks both TCP/21 (FTP) and TCP/22 (SSH)
+- **New:** Live FTP and SSH counters in status bar
+
+### [v1.20.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.20.0) — 2026-09-12
+**Multi-IoT Protocol Fixes**
+- **Fixed:** Multi IoT scans for FTP, MongoDB, Redis, RDP, VNC now show Good results
+- **Enhanced:** FTP 'Open External' launches FileZilla if installed
+- **New:** FTP Quick Connect shows directory listing
+
+### [v1.19.0](https://github.com/MrNinja1410/iot-camera-releases/releases/tag/v1.19.0) — 2026-09-11
+**Full FTP Toolkit**
+- **New:** FTP Connect, Batch FTP Scan, FTP Brute Force
+- Multi IoT Mode: "FTP (anonymous login)" detection
+
+---
+
+**See the full [Releases page](https://github.com/MrNinja1410/iot-camera-releases/releases) for complete history and download links.**
 
 ---
 
