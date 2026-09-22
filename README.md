@@ -113,8 +113,7 @@ Grab the latest signed build from the [**Releases**](https://github.com/MrNinja1
 
 | Build | File | Size | Notes |
 |---|---|---|---|
-| **Windows Installer** | `IoTCameraAnalyzer-Setup.exe` | ~48 MB | Standard install for Windows 10 / 11 (x64). |
-| **Portable** | `IoTCameraAnalyzer-Portable.zip` | ~46 MB | Runs from any folder or USB stick — no installation. |
+| **Portable** | `IoTCameraAnalyzer.exe` | ~246 MB | Runs from any folder or USB stick — no installation. |
 
 > 🍎🐧 **macOS and Linux builds are in progress.** Click **Watch → Releases** on this repo to be notified.
 
