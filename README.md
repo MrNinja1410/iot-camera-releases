@@ -10,7 +10,6 @@
   Until you add them, GitHub shows the alt-text in a grey box,
   so nothing looks broken.
   Anything marked  <!-- EDIT -->  is a placeholder value you
-  should swap for your real details (repo URL, version, etc.).
   ═══════════════════════════════════════════════════════════════
 -->
 
