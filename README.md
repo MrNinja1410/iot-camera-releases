@@ -17,7 +17,7 @@
 <div align="center">
 
 <!-- Replace docs/screenshots/logo.png with your logo or banner (recommended width ~600px) -->
-<img src="docs/screenshots/logo.png" alt="IoT Camera Analyzer logo" width="140" />
+<img src="https://imgup.uk/i/brNnwUC4.png" alt="IoT Camera Analyzer logo" width="140" />
 
 # IoT Camera Analyzer
 
