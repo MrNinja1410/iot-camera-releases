@@ -117,11 +117,6 @@ Grab the latest signed build from the [**Releases**](https://github.com/MrNinja1
 
 > 🍎🐧 **macOS and Linux builds are in progress.** Click **Watch → Releases** on this repo to be notified.
 
-### Install (installer)
-1. Download `IoTCameraAnalyzer-Setup.exe` from the latest release.
-2. Run it. Windows SmartScreen may warn about a new publisher — choose **More info → Run anyway**.
-3. Launch **IoT Camera Analyzer** from the Start menu.
-
 ### Install (portable)
 1. Download and unzip `IoTCameraAnalyzer-Portable.zip`.
 2. Run `IoTCameraAnalyzer.exe` from the extracted folder.
